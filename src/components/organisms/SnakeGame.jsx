@@ -255,18 +255,17 @@ const SnakeGame = () => {
                     if (direction !== 'LEFT' && lastDirectionRef.current !== 'LEFT') {
                         changeDirection('RIGHT');
                     }
-                    break;
+break;
                 default:
                     break;
             }
-}
         };
 
         window.addEventListener('keydown', handleKeyPress);
         return () => window.removeEventListener('keydown', handleKeyPress);
     }, [gameState]);
 
-    if (loading) {
+if (loading) {
         return (
             <div className="flex items-center justify-center h-96">
                 <motion.div
@@ -276,6 +275,7 @@ const SnakeGame = () => {
                 />
             </div>
         );
+    }
 
     const handleGameAction = () => {
         if (gameState.gameStatus === 'ready') startGame();
@@ -312,7 +312,7 @@ const SnakeGame = () => {
                 initial={{ y: 20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.4 }}
-className="mt-6 flex justify-center gap-4 text-sm text-gray-400"
+                className="mt-6 flex justify-center gap-4 text-sm text-gray-400"
             >
                 <ControlHint iconName="Navigation" text="Arrow Keys or WASD to Move" />
                 <ControlHint keyboardKey="SPC" text="Pause/Resume" />
