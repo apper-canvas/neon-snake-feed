@@ -1,0 +1,67 @@
+[
+  {
+    "id": 1,
+    "snake": [{"x": 10, "y": 10}],
+    "food": {"x": 15, "y": 15},
+    "direction": "RIGHT",
+    "score": 0,
+    "highScore": 0,
+    "gameStatus": "ready",
+    "speed": 200,
+    "level": 1,
+    "createdAt": "2024-01-15T10:00:00.000Z",
+    "updatedAt": "2024-01-15T10:00:00.000Z"
+  },
+  {
+    "id": 2,
+    "snake": [{"x": 5, "y": 5}, {"x": 4, "y": 5}, {"x": 3, "y": 5}],
+    "food": {"x": 12, "y": 8},
+    "direction": "RIGHT",
+    "score": 20,
+    "highScore": 150,
+    "gameStatus": "gameOver",
+    "speed": 180,
+    "level": 2,
+    "createdAt": "2024-01-15T11:30:00.000Z",
+    "updatedAt": "2024-01-15T11:35:00.000Z"
+  },
+  {
+    "id": 3,
+    "snake": [{"x": 8, "y": 12}, {"x": 7, "y": 12}, {"x": 6, "y": 12}, {"x": 5, "y": 12}],
+    "food": {"x": 16, "y": 3},
+    "direction": "UP",
+    "score": 30,
+    "highScore": 220,
+    "gameStatus": "paused",
+    "speed": 160,
+    "level": 3,
+    "createdAt": "2024-01-15T14:15:00.000Z",
+    "updatedAt": "2024-01-15T14:20:00.000Z"
+  },
+  {
+    "id": 4,
+    "snake": [{"x": 2, "y": 18}, {"x": 1, "y": 18}, {"x": 0, "y": 18}, {"x": 0, "y": 17}, {"x": 0, "y": 16}],
+    "food": {"x": 10, "y": 10},
+    "direction": "DOWN",
+    "score": 40,
+    "highScore": 340,
+    "gameStatus": "playing",
+    "speed": 140,
+    "level": 4,
+    "createdAt": "2024-01-15T16:45:00.000Z",
+    "updatedAt": "2024-01-15T16:50:00.000Z"
+  },
+  {
+    "id": 5,
+    "snake": [{"x": 19, "y": 19}, {"x": 18, "y": 19}, {"x": 17, "y": 19}, {"x": 16, "y": 19}, {"x": 15, "y": 19}, {"x": 14, "y": 19}],
+    "food": {"x": 5, "y": 5},
+    "direction": "LEFT",
+    "score": 50,
+    "highScore": 450,
+    "gameStatus": "ready",
+    "speed": 120,
+    "level": 5,
+    "createdAt": "2024-01-15T19:20:00.000Z",
+    "updatedAt": "2024-01-15T19:25:00.000Z"
+  }
+]

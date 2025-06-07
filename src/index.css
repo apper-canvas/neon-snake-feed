@@ -1,0 +1,64 @@
+@import 'react-toastify/dist/ReactToastify.css';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: 'Space Mono', ui-monospace, monospace;
+    background: #0f0f1e;
+    color: #ffffff;
+    overflow: hidden;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+}
+
+@layer utilities {
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  .neon-text {
+    text-shadow: 0 0 10px currentColor, 0 0 20px currentColor, 0 0 30px currentColor;
+  }
+
+  .neon-border {
+    border: 1px solid currentColor;
+    box-shadow: 0 0 10px currentColor, inset 0 0 10px currentColor;
+  }
+
+  .snake-segment {
+    background: linear-gradient(45deg, #00ffff, #ff00ff);
+    box-shadow: 0 0 15px #00ffff, 0 0 25px #ff00ff;
+    border-radius: 2px;
+  }
+
+  .snake-head {
+    background: #00ffff;
+    box-shadow: 0 0 20px #00ffff, 0 0 30px #00ffff;
+    border-radius: 3px;
+  }
+
+  .food-item {
+    background: #ffff00;
+    box-shadow: 0 0 15px #ffff00, 0 0 25px #ffff00;
+    border-radius: 50%;
+  }
+
+  .game-grid {
+    background-image: 
+      linear-gradient(rgba(26, 26, 46, 0.3) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(26, 26, 46, 0.3) 1px, transparent 1px);
+  }
+}

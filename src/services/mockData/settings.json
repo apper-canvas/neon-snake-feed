@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "difficulty": "normal",
+    "soundEnabled": true,
+    "gridSize": 20,
+    "theme": "neon",
+    "controlScheme": "arrows",
+    "showTrail": true,
+    "animationsEnabled": true,
+    "createdAt": "2024-01-15T10:00:00.000Z",
+    "updatedAt": "2024-01-15T10:00:00.000Z"
+  },
+  {
+    "id": 2,
+    "difficulty": "easy",
+    "soundEnabled": false,
+    "gridSize": 15,
+    "theme": "classic",
+    "controlScheme": "wasd",
+    "showTrail": false,
+    "animationsEnabled": true,
+    "createdAt": "2024-01-15T12:30:00.000Z",
+    "updatedAt": "2024-01-15T12:30:00.000Z"
+  },
+  {
+    "id": 3,
+    "difficulty": "hard",
+    "soundEnabled": true,
+    "gridSize": 25,
+    "theme": "neon",
+    "controlScheme": "arrows",
+    "showTrail": true,
+    "animationsEnabled": false,
+    "createdAt": "2024-01-15T15:45:00.000Z",
+    "updatedAt": "2024-01-15T15:45:00.000Z"
+  },
+  {
+    "id": 4,
+    "difficulty": "extreme",
+    "soundEnabled": true,
+    "gridSize": 30,
+    "theme": "cyberpunk",
+    "controlScheme": "arrows",
+    "showTrail": true,
+    "animationsEnabled": true,
+    "createdAt": "2024-01-15T18:10:00.000Z",
+    "updatedAt": "2024-01-15T18:10:00.000Z"
+  },
+  {
+    "id": 5,
+    "difficulty": "beginner",
+    "soundEnabled": false,
+    "gridSize": 12,
+    "theme": "retro",
+    "controlScheme": "wasd",
+    "showTrail": false,
+    "animationsEnabled": true,
+    "createdAt": "2024-01-15T20:25:00.000Z",
+    "updatedAt": "2024-01-15T20:25:00.000Z"
+  }
+]
