@@ -12,6 +12,7 @@ const GridCell = ({ x, y, type, size, className, children, style, ...props }) =>
     const baseClasses = "absolute rounded-sm";
     let typeClasses = "";
     let motionProps = {};
+    let dynamicKey = null;
 
     switch (type) {
         case 'snake-head':
@@ -24,8 +25,8 @@ const GridCell = ({ x, y, type, size, className, children, style, ...props }) =>
             break;
         case 'food':
             typeClasses = "food-item animate-food-rotate";
+            dynamicKey = `food-${x}-${y}`; // Extract key to pass directly
             motionProps = {
-                key: `food-${x}-${y}`, // Ensure a new key for each food to re-trigger animations
                 initial: { scale: 0, rotate: 0 },
                 animate: {
                     scale: [1, 1.2, 1],
@@ -47,6 +48,7 @@ const GridCell = ({ x, y, type, size, className, children, style, ...props }) =>
 
     return (
         <motion.div
+            key={dynamicKey} // Pass key directly, not through spread
             className={`${baseClasses} ${typeClasses} ${className || ''}`}
             style={{ ...baseStyle, ...style }}
             {...motionProps}
