@@ -32,10 +32,16 @@ const SnakeGame = () => {
     });
 
     const [loading, setLoading] = useState(true);
-    const [trailPositions, setTrailPositions] = useState([]);
+const [trailPositions, setTrailPositions] = useState([]);
     const [scoreFlash, setScoreFlash] = useState(false);
     const gameLoopRef = useRef();
     const lastDirectionRef = useRef(INITIAL_DIRECTION); // To prevent immediate reverse
+    const gameStateRef = useRef(gameState); // To access current state in event handlers
+    
+    // Update gameStateRef whenever gameState changes
+    useEffect(() => {
+        gameStateRef.current = gameState;
+    }, [gameState]);
 
     // Load initial data
     useEffect(() => {
@@ -197,16 +203,20 @@ const SnakeGame = () => {
         toast.info("Game Reset - Press SPACE to start");
     }, [gameState.score, gameState.highScore, generateFood]);
 
-    const changeDirection = useCallback((newDirection) => {
-        setGameState(prev => ({ ...prev, direction: newDirection }));
+const changeDirection = useCallback((newDirection) => {
+        setGameState(prev => {
+            // Only update if the direction actually changes
+            if (prev.direction === newDirection) return prev;
+            return { ...prev, direction: newDirection };
+        });
         lastDirectionRef.current = newDirection;
     }, []);
 
-    // Handle keyboard input
 // Handle keyboard input
     useEffect(() => {
         const handleKeyPress = (e) => {
-            const { gameStatus, direction } = gameState;
+            // Use ref to get current state to avoid stale closures
+            const { gameStatus, direction } = gameStateRef.current;
 
             if (gameStatus === 'gameOver' && e.key !== ' ') return;
 
@@ -223,7 +233,7 @@ const SnakeGame = () => {
                         resetGame();
                     }
                     break;
-                // Arrow key controls
+                // Arrow key controls and WASD
                 case 'ArrowUp':
                 case 'w':
                 case 'W':
@@ -255,7 +265,7 @@ const SnakeGame = () => {
                     if (direction !== 'LEFT' && lastDirectionRef.current !== 'LEFT') {
                         changeDirection('RIGHT');
                     }
-break;
+                    break;
                 default:
                     break;
             }
@@ -263,7 +273,7 @@ break;
 
         window.addEventListener('keydown', handleKeyPress);
         return () => window.removeEventListener('keydown', handleKeyPress);
-    }, [gameState]);
+    }, [startGame, pauseGame, resumeGame, resetGame, changeDirection]);
 
 if (loading) {
         return (
