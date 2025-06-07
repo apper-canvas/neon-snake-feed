@@ -1,6 +1,6 @@
 import React from 'react';
 import { ToastContainer } from 'react-toastify';
-import Home from './pages/Home';
+import HomePage from '@/components/pages/HomePage';
 import { motion } from 'framer-motion';
 
 function App() {
@@ -23,7 +23,7 @@ function App() {
         transition={{ duration: 0.5 }}
         className="relative z-10"
       >
-        <Home />
+<HomePage />
       </motion.div>
 
       <ToastContainer
