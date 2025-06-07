@@ -8,11 +8,10 @@
     scroll-behavior: smooth;
   }
   
-  body {
+body {
     font-family: 'Space Mono', ui-monospace, monospace;
     background: #0f0f1e;
     color: #ffffff;
-    overflow: hidden;
   }
 
   * {
@@ -29,6 +28,26 @@
     display: none;
   }
 
+  .scrollbar-neon {
+    scrollbar-width: thin;
+    scrollbar-color: #00ffff #1a1a2e;
+  }
+  .scrollbar-neon::-webkit-scrollbar {
+    width: 8px;
+  }
+  .scrollbar-neon::-webkit-scrollbar-track {
+    background: #1a1a2e;
+    border-radius: 4px;
+  }
+  .scrollbar-neon::-webkit-scrollbar-thumb {
+    background: #00ffff;
+    border-radius: 4px;
+    box-shadow: 0 0 10px #00ffff;
+  }
+  .scrollbar-neon::-webkit-scrollbar-thumb:hover {
+    background: #66ffff;
+    box-shadow: 0 0 15px #00ffff;
+  }
   .neon-text {
     text-shadow: 0 0 10px currentColor, 0 0 20px currentColor, 0 0 30px currentColor;
   }

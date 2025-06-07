@@ -17,7 +17,7 @@ export default {
           DEFAULT: '#ff00ff',
           light: '#ff66ff',
           dark: '#cc00cc'
-        },
+},
         accent: '#ffff00',
         surface: {
           50: '#f8fafc',
@@ -41,7 +41,7 @@ export default {
         }
       },
       fontFamily: { 
-        sans: ['Space Mono', 'ui-monospace', 'monospace'], 
+        sans: ['Space Mono', 'ui-monospace', 'monospace'],
         heading: ['Orbitron', 'ui-sans-serif', 'system-ui'],
         display: ['Orbitron', 'ui-sans-serif', 'system-ui']
       },

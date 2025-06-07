@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 
 function App() {
   return (
-    <div className="min-h-screen bg-neon-bg relative overflow-hidden">
+    <div className="min-h-screen bg-neon-bg relative overflow-auto scrollbar-neon">
       {/* Animated background grid */}
       <div className="absolute inset-0 game-grid" style={{
         backgroundSize: '20px 20px',
