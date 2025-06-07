@@ -203,6 +203,7 @@ const SnakeGame = () => {
     }, []);
 
     // Handle keyboard input
+// Handle keyboard input
     useEffect(() => {
         const handleKeyPress = (e) => {
             const { gameStatus, direction } = gameState;
@@ -222,25 +223,34 @@ const SnakeGame = () => {
                         resetGame();
                     }
                     break;
+                // Arrow key controls
                 case 'ArrowUp':
+                case 'w':
+                case 'W':
                     e.preventDefault();
                     if (direction !== 'DOWN' && lastDirectionRef.current !== 'DOWN') {
                         changeDirection('UP');
                     }
                     break;
                 case 'ArrowDown':
+                case 's':
+                case 'S':
                     e.preventDefault();
                     if (direction !== 'UP' && lastDirectionRef.current !== 'UP') {
                         changeDirection('DOWN');
                     }
                     break;
                 case 'ArrowLeft':
+                case 'a':
+                case 'A':
                     e.preventDefault();
                     if (direction !== 'RIGHT' && lastDirectionRef.current !== 'RIGHT') {
                         changeDirection('LEFT');
                     }
                     break;
                 case 'ArrowRight':
+                case 'd':
+                case 'D':
                     e.preventDefault();
                     if (direction !== 'LEFT' && lastDirectionRef.current !== 'LEFT') {
                         changeDirection('RIGHT');
@@ -249,11 +259,12 @@ const SnakeGame = () => {
                 default:
                     break;
             }
+}
         };
 
         window.addEventListener('keydown', handleKeyPress);
         return () => window.removeEventListener('keydown', handleKeyPress);
-    }, [gameState, startGame, pauseGame, resumeGame, resetGame, changeDirection]);
+    }, [gameState]);
 
     if (loading) {
         return (
@@ -265,7 +276,6 @@ const SnakeGame = () => {
                 />
             </div>
         );
-    }
 
     const handleGameAction = () => {
         if (gameState.gameStatus === 'ready') startGame();
@@ -302,9 +312,9 @@ const SnakeGame = () => {
                 initial={{ y: 20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.4 }}
-                className="mt-6 flex justify-center gap-4 text-sm text-gray-400"
+className="mt-6 flex justify-center gap-4 text-sm text-gray-400"
             >
-                <ControlHint iconName="Navigation" text="Arrow Keys to Move" />
+                <ControlHint iconName="Navigation" text="Arrow Keys or WASD to Move" />
                 <ControlHint keyboardKey="SPC" text="Pause/Resume" />
             </motion.div>
         </div>

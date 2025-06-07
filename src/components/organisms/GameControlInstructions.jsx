@@ -14,14 +14,26 @@ const GameControlInstructions = () => {
                 <h3 className="text-lg font-display font-bold text-primary mb-3 neon-text">
                     CONTROLS
                 </h3>
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
-                    <ControlHint iconName="ArrowUp" text="Move Up" className="justify-center" />
-                    <ControlHint iconName="ArrowDown" text="Move Down" className="justify-center" />
-                    <ControlHint iconName="ArrowLeft" text="Move Left" className="justify-center" />
-                    <ControlHint iconName="ArrowRight" text="Move Right" className="justify-center" />
-                </div>
-                <div className="mt-4 flex items-center justify-center gap-2">
-                    <ControlHint keyboardKey="SPACE" text="Pause / Resume" />
+<div className="space-y-4">
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
+                        <ControlHint iconName="ArrowUp" text="Move Up" className="justify-center" />
+                        <ControlHint iconName="ArrowDown" text="Move Down" className="justify-center" />
+                        <ControlHint iconName="ArrowLeft" text="Move Left" className="justify-center" />
+                        <ControlHint iconName="ArrowRight" text="Move Right" className="justify-center" />
+                    </div>
+                    
+                    <div className="text-xs text-gray-400 font-semibold">OR</div>
+                    
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
+                        <ControlHint keyboardKey="W" text="Move Up" className="justify-center" />
+                        <ControlHint keyboardKey="S" text="Move Down" className="justify-center" />
+                        <ControlHint keyboardKey="A" text="Move Left" className="justify-center" />
+                        <ControlHint keyboardKey="D" text="Move Right" className="justify-center" />
+                    </div>
+                    
+                    <div className="flex items-center justify-center gap-2 pt-2 border-t border-primary/20">
+                        <ControlHint keyboardKey="SPACE" text="Pause / Resume" />
+                    </div>
                 </div>
             </div>
         </motion.div>
